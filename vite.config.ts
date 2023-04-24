@@ -1,10 +1,14 @@
 const path = require("path");
 const { defineConfig } = require("vite");
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import dts from 'vite-plugin-dts'
 // import vue from '@vitejs/plugin-vue';
 
 module.exports = defineConfig({
   plugins: [
+    dts({
+      outputDir: "./dist"
+    }),
     viteStaticCopy({
       targets: [
         {
